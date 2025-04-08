@@ -836,19 +836,24 @@ function setupChatbot() {
     const chatbotWindow = document.getElementById('chatbot-window');
     const closeButton = document.getElementById('close-chatbot');
 
-    chatbotButton.addEventListener('click', () => {
-        chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'flex' : 'none';
-        if (chatbotWindow.style.display === 'flex') {
-            document.getElementById('chatbot-input').focus();
-        }
-    });
+    if (chatbotButton && chatbotWindow && closeButton) {
+        // Toggle chatbot window
+        chatbotButton.addEventListener('click', () => {
+            chatbotWindow.style.display = chatbotWindow.style.display === 'none' || chatbotWindow.style.display === '' ? 'flex' : 'none';
+            if (chatbotWindow.style.display === 'flex') {
+                document.getElementById('chatbot-input').focus();
+            }
+        });
 
-    closeButton.addEventListener('click', () => {
-        chatbotWindow.style.display = 'none';
-        resetChatState();
-    });
+        // Close chatbot window
+        closeButton.addEventListener('click', () => {
+            chatbotWindow.style.display = 'none';
+            resetChatState();
+        });
 
-    addMessageToChat('bot', "Hello! I'm your Cultural Festival Planner. Say 'plan a festival' or ask about a festival (e.g., 'What is Holi?') to start!");
+        // Initial message
+        addMessageToChat('bot', "Hello! I'm your Cultural Festival Planner. Say 'plan a festival' or ask about a festival (e.g., 'What is Holi?') to start!");
+    }
 }
 function sendMessage() {
     const input = document.getElementById('chatbot-input');
@@ -956,7 +961,6 @@ function getChatbotResponse(message) {
 
     // Plan initiation
     if (message.includes('plan') || Object.keys(festivalNames).some(f => message.includes(f.split(' ')[0]))) {
-        // Only reset state if starting a new plan from scratch
         if (!currentFestivalPlan || !currentFestivalPlan.name || message.includes('plan a festival')) {
             currentFestivalPlan = {};
             currentQuestionIndex = 0;
@@ -1018,8 +1022,8 @@ function getChatbotResponse(message) {
         if (message === 'yes' || message === 'this year') {
             currentFestivalPlan.date = `${knownFestivals[currentFestivalPlan.name.toLowerCase()].fixedDate}-${currentYear}`;
             awaitingYearConfirmation = false;
-            currentQuestionIndex = 2; // Directly move to budget for fixed-date festivals
-            saveToChatHistory(message, questions[currentQuestionIndex]); // Log the transition
+            currentQuestionIndex = 2;
+            saveToChatHistory(message, questions[currentQuestionIndex]);
             return questions[currentQuestionIndex];
         } else if (message === 'no') {
             awaitingYearConfirmation = false;
@@ -1027,8 +1031,8 @@ function getChatbotResponse(message) {
         } else if (/^\d{4}$/.test(message)) {
             currentFestivalPlan.date = `${knownFestivals[currentFestivalPlan.name.toLowerCase()].fixedDate}-${message}`;
             awaitingYearConfirmation = false;
-            currentQuestionIndex = 2; // Directly move to budget
-            saveToChatHistory(message, questions[currentQuestionIndex]); // Log the transition
+            currentQuestionIndex = 2;
+            saveToChatHistory(message, questions[currentQuestionIndex]);
             return questions[currentQuestionIndex];
         } else {
             return "Please say 'yes' for this year (" + currentYear + ") or 'no' to specify a different year!";
@@ -1051,12 +1055,10 @@ function getChatbotResponse(message) {
                     errorMessage = "Invalid date. Please use DD-MM-YYYY (e.g., 13-01-2026) or formats like '19 October 2025', 'October 19, 2025', or '19th October 2025'.";
                 } else {
                     currentFestivalPlan.date = parsedDate;
-                    // Check if the date has passed
                     const daysRemaining = calculateDaysRemaining(parsedDate);
                     if (daysRemaining <= 0) {
-                        // Date has passed or is today, reset the current question index
-                        currentQuestionIndex = 0;
-                        return "Sorry the date has passed. Do you want me to proceed with another festival? Say 'yes' or 'no'.";
+                        currentQuestionIndex = 0; // Reset to start anew
+                        return "Sorry, the date has passed. Would you like to plan a different festival or exit? Say 'yes' to plan another or 'no' to exit.";
                     }
                 }
                 break;
@@ -1097,7 +1099,7 @@ function getChatbotResponse(message) {
         }
 
         currentQuestionIndex++;
-        saveToChatHistory(message, questions[currentQuestionIndex] || ""); // Log the transition
+        saveToChatHistory(message, currentQuestionIndex < questions.length ? questions[currentQuestionIndex] : "");
 
         if (currentQuestionIndex === 7 && knownFestivals[currentFestivalPlan.name.toLowerCase()] && knownFestivals[currentFestivalPlan.name.toLowerCase()].fixedDuration) {
             currentFestivalPlan.duration = knownFestivals[currentFestivalPlan.name.toLowerCase()].fixedDuration;
@@ -1114,13 +1116,13 @@ function getChatbotResponse(message) {
         }
     }
 
-    // Handle "yes" or "no" after "Sorry the date has passed..."
-    if (message === 'yes' && chatHistory.some(h => h.message.includes("Sorry the date has passed. Do you want me to proceed with another festival?"))) {
+    // Handle "yes" or "no" after "Sorry, the date has passed..."
+    if (message === 'yes' && chatHistory.some(h => h.message.includes("Would you like to plan a different festival or exit?"))) {
         resetChatState();
-        return questions[0]; // Start planning a new festival
-    } else if (message === 'no' && chatHistory.some(h => h.message.includes("Sorry the date has passed. Do you want me to proceed with another festival?"))) {
+        return questions[0];
+    } else if (message === 'no' && chatHistory.some(h => h.message.includes("Would you like to plan a different festival or exit?"))) {
         resetChatState();
-        return "Thank you for your kind visit. I am designed by Aviral Varshney. If you want to plan a festival, remember me again!";
+        return "Thank you for your visit! Designed by Aviral Varshney. Come back to plan another festival anytime!";
     }
 
     // Default greetings (unchanged)
@@ -1473,13 +1475,12 @@ function showError(message) {
     document.body.appendChild(div);
     setTimeout(() => div.remove(), 3000);
 }
-
 function openChatbot() {
     const chatbotWindow = document.getElementById('chatbot-window');
     const chatbotButton = document.getElementById('chatbot-button');
     if (chatbotWindow && chatbotButton) {
-        chatbotWindow.style.display = 'flex';
-        chatbotButton.style.display = 'flex';
+        chatbotWindow.style.display = 'flex'; // Force open on button click
+        chatbotButton.style.display = 'flex'; // Ensure button remains visible
         document.getElementById('chatbot-input').focus();
     }
 }
