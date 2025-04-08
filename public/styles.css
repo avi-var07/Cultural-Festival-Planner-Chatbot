@@ -220,6 +220,9 @@ body {
     color: var(--saffron);
     opacity: 1;
 }
+#festival-date{
+    color: black;
+}
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
