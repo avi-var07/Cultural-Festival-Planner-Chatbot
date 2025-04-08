@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Festival Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-toggle">☰</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+      
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Cultural Festival Planner</h1>
+            <p>Celebrate vibrant traditions from around the world with seamless festival planning.</p>
+            <button class="cta-button" onclick="openChatbot()">Plan Your Festival with AI</button>
+            <div class="festival-slideshow">
+                <div><img src="/images/holi.webp" alt="Holi Festival Colors"></div>
+                <div><img src="/images/Shubh_Deepavali.gif" alt="Diwali Festival Lights"></div>
+                <div><img src="/images/Navaratri.jpg" alt="Navratri Festival Dance"></div>
+                <div><img src="/images/eid.jpg" alt="Eid Festival Celebration"></div>
+                <div><img src="/images/halloween.jpg" alt="Halloween Festival Pumpkins"></div>
+                <div><img src="/images/independence.jpg" alt="Independence Day Festival Flag"></div>
+                <div><img src="/images/pongal.webp" alt="Pongal Festival Harvest"></div>
+                <div><img src="/images/onama.avif" alt="Onam Festival Flower Carpet"></div>
+                <div><img src="/images/lohri.webp" alt="Lohri Festival Bonfire"></div>
+                <div><img src="/images/baisakhi.jpg" alt="Baisakhi Festival Procession"></div>
+                <div><img src="/images/republic.avif" alt="Republic Day"></div>
+                <div><img src="/images/other festivals.jpg" alt="Other Festivals Celebration"></div>
+            </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2>🌺 Festival Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-globe"></i>
+                <h3>Global Traditions</h3>
+                <p>Explore diverse festivals like Diwali, Holi, Eid, Christmas, and more.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-masks-theater"></i>
+                <h3>Cultural Insights</h3>
+                <p>Learn rituals, stories, and customs of celebrations worldwide.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-users"></i>
+                <h3>Community Sync</h3>
+                <p>Bring your community together with festive planning.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="plan" class="meeting-planner">
+        <h2>🎉 Plan Your Festival</h2>
+        <form id="festival-form" class="meeting-form">
+            <input type="text" id="festival-title" placeholder="Festival Name (e.g., Diwali 2025)" required>
+            <input type="date" id="festival-date" required>
+            <input type="text" id="festival-budget" placeholder="Budget in ₹ (e.g., 50000)" required>
+            <input type="text" id="festival-location" placeholder="Location (e.g., Jaipur)" required>
+            <select id="festival-food-type" required aria-label="Select food type for the festival">
+                <option value="" disabled selected>Select Food Type</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+                <option value="non-vegetarian">Non-Vegetarian</option>
+                <option value="gluten-free">Gluten-Free</option>
+                <option value="halal">Halal</option>
+                <option value="kosher">Kosher</option>
+                <option value="mixed">Mixed (Multiple Options)</option>
+                <option value="other">Other (Specify in Details)</option>
+            </select>
+            <textarea id="festival-details" placeholder="Details or Theme (e.g., Rangoli for Diwali)"></textarea>
+            <button type="submit">Create Festival</button>
+        </form>
+        <div id="festival-output" class="schedule-output"></div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>📜 Contact Us</h2>
+        <form id="contact-form" class="contact-form">
+            <input type="text" id="contact-name" placeholder="Your Name" required>
+            <input type="email" id="contact-email" placeholder="Your Email" required>
+            <textarea id="contact-message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <div class="chatbot-container">
+        <button id="chatbot-button">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 2H4C2.9 2 2 2.9 2 4V18C2 19.1 2.9 20 4 20H8L12 23L16 20H20C21.1 20 22 19.1 22 18V4C22 2.9 21.1 2 20 2ZM20 18H15.17L13.58 19.41L12 21L10.41 19.41L8.83 18H4V4H20V18ZM12 7C10.34 7 9 8.34 9 10C9 11.66 10.34 13 12 13C13.66 13 15 11.66 15 10C15 8.34 13.66 7 12 7ZM12 15C9.24 15 7 12.76 7 10C7 7.24 9.24 5 12 5C14.76 5 17 7.24 17 10C17 12.76 14.76 15 12 15Z" fill="white"/>
+            </svg>
+        </button>
+        <div id="chatbot-window" class="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-profile">
+                    <img src="https://i.imgur.com/8K5Z5Z5.png" alt="Planner Avatar" class="chatbot-avatar">
+                    <div class="chatbot-info">
+                        <h3>Cultural Festival Planner</h3>
+                        <span class="status-indicator">Ready to Help</span>
+                    </div>
+                </div>
+                <button id="close-chatbot" class="close-button">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages"></div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbot-input" placeholder="Ask the Planner...">
+                <button onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                    <span class="send-text">Send</span>
+                </button>
+            </div>
+            <div class="chatbot-background-effect"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Cultural Festival Planner - Built for Everyone</p>
+        <p>Prepared by Aviral Ved Prakash Varshney</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="script.js"></script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92bc4edf5f43453f',t:'MTc0Mzg5MDMxOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>

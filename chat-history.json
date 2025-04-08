@@ -1,0 +1,177 @@
+[
+  {
+    "sender": "user",
+    "message": "Hi",
+    "timestamp": "2023-10-15T10:00:00.000Z"
+  },
+  {
+    "sender": "bot",
+    "message": "Hi! How can I help with your festival planning today?",
+    "timestamp": "2023-10-15T10:00:01.000Z"
+  },
+  {
+    "message": "hii",
+    "response": "Hi! How can I help with your festival planning today? This chat will be saved in your history."
+  },
+  {
+    "message": "plan holi",
+    "response": "Thanks! Now, please tell me the date of the festival (e.g., DD-MM-YYYY or 19 October 2025)."
+  },
+  {
+    "message": "14-03-2026",
+    "response": "Got it! Please tell me the budget in rupees (e.g., 50000)."
+  },
+  {
+    "message": "20000",
+    "response": "Nice! Please tell me the location."
+  },
+  {
+    "message": "phagwara'",
+    "response": "Great! How many people will attend? (Enter a number)"
+  },
+  {
+    "message": "200",
+    "response": "Awesome! Please tell me the food type (e.g., vegetarian, vegan, non-vegetarian)."
+  },
+  {
+    "message": "veg",
+    "response": "Finally, how many days will the festival last? (Enter a number)"
+  },
+  {
+    "message": "2",
+    "response": "Festival Plan: holi\nStart Date: 14-03-2026\nBudget: ₹20,000 (₹100 per person)\nLocation: phagwara'\nAttendees: 200\nFood Type: veg\nDuration: 2 days\nThere are still 340 days left, here is your plan for the festival:\n\nWhy Celebrate: Holi celebrates the victory of good over evil. Day 1 (Holika Dahan) commemorates the burning of Holika, symbolizing the triumph of Prahlad’s devotion over evil. Day 2 celebrates spring, love, and Krishna-Radha’s playful bond.\nSignificance: Symbolizes renewal, forgiveness, and the triumph of devotion\nPlaces to Visit: Visit Mathura or Vrindavan for Krishna celebrations, Barsana for Lathmar Holi, or local parks\nBudget Tips: Buy colors in bulk, make sweets at home, use local wood for bonfires, and host potlucks.\nEnjoyment Tips: Day 1: Enjoy bonfire warmth and prayers. Day 2: Play with colors, dance, and share sweets.\nCrowd Management: Day 1: Keep safe distance from bonfires. Day 2: Set up color zones and water stations.\n**Budget Warning**: Your budget (₹100 per person) is low. Consider reducing decorations, hosting a potluck, or limiting the event to a single day to stay within budget. Here's a scaled-down plan:\n\n\nDetailed Day-wise Plan:\nDay 1 (14-03-2026):\n- Day Significance: Holika Dahan - Marks the burning of Holika, symbolizing the victory of faith and good over evil as Prahlad was saved by Lord Vishnu.\n- Theme: Colors and renewal (Holika Dahan)\n- Dress Code: White or light-colored traditional attire\n- What to Do: Light bonfires for Holika Dahan, sing songs, and pray\n- Decorations: Bonfire setup, floral rangoli, and lamps\n- Food: Mixed veg dishes\n- Performances: Folk songs (e.g., 'Phagun Aayo'), bonfire chants\n- Songs to Play: Phagun Aayo\n- Dances to Perform: Folk dances\n- Places to Visit: Visit Mathura or Vrindavan for Krishna celebrations\n\nDay 2 (15-03-2026):\n- Day Significance: Holi - Celebrates spring’s arrival, Krishna’s playful colors with Radha, and the renewal of relationships with love and forgiveness.\n- Theme: Colors and renewal (Holi)\n- Dress Code: White or light-colored traditional attire\n- What to Do: Play with eco-friendly colors, water balloons, dance to folk music, and host feasts\n- Decorations: Vibrant colored powders, water sprinklers, and colorful decor\n- Food: Mixed veg dishes\n- Performances: Raslila dances, Holi geet (e.g., 'Rang Barse')\n- Songs to Play: Rang Barse\n- Dances to Perform: Raslila\n- Places to Visit: Barsana for Lathmar Holi\n\nEnjoy your festival! Do you want to plan another festival? Say 'yes' or 'no'."
+  },
+  {
+    "message": "what is my jee rank",
+    "response": "I don’t know this festival. Please describe it if you'd like to plan it!"
+  },
+  {
+    "message": "hii",
+    "response": "Hi! How can I help with your festival planning today? This chat will be saved in your history."
+  },
+  {
+    "message": "what is jee",
+    "response": "Eid al-fitr: Eid al-Fitr marks the end of Ramadan, celebrating gratitude to Allah for strength and blessings."
+  },
+  {
+    "message": "what is holi",
+    "response": "Holi: Holi celebrates the victory of good over evil. Day 1 (Holika Dahan) commemorates the burning of Holika, symbolizing the triumph of Prahlad’s devotion over evil. Day 2 celebrates spring, love, and Krishna-Radha’s playful bond."
+  },
+  {
+    "message": "what is my jee rank",
+    "response": "I don’t know this festival. Please describe it if you'd like to plan it!"
+  },
+  {
+    "message": "who is the president of india",
+    "response": "Sorry! I am a Cultural Festival Chatbot designed for this domain only by Aviral Varshney. Do you want me to plan a festival or event? Please proceed then!"
+  },
+  {
+    "message": "what is the time now?",
+    "response": "I don’t know this festival. Please describe it if you'd like to plan it!"
+  },
+  {
+    "message": "what is the meaning of aviral",
+    "response": "I don’t know this festival. Please describe it if you'd like to plan it!"
+  },
+  {
+    "message": "how are you",
+    "response": "Sorry! I am a Cultural Festival Chatbot designed for this domain only by Aviral Varshney. Do you want me to plan a festival or event? Please proceed then!"
+  },
+  {
+    "message": "where is america",
+    "response": "Sorry! I am a Cultural Festival Chatbot designed for this domain only by Aviral Varshney. Do you want me to plan a festival or event? Please proceed then!"
+  },
+  {
+    "sender": "user",
+    "message": "hii"
+  },
+  {
+    "sender": "bot",
+    "message": "Sorry, I am a cultural festival planning chatbot designed by Aviral Varshney for this domain only. Please ask about festivals or say 'plan a festival'."
+  },
+  {
+    "sender": "user",
+    "message": "what is JEE"
+  },
+  {
+    "sender": "bot",
+    "message": "Sorry, I am a cultural festival planning chatbot designed by Aviral Varshney for this domain only. Please ask about festivals or say 'plan a festival'."
+  },
+  {
+    "sender": "user",
+    "message": "what is holi'"
+  },
+  {
+    "sender": "bot",
+    "message": "Sorry, I am a cultural festival planning chatbot designed by Aviral Varshney for this domain only. Please ask about festivals or say 'plan a festival'."
+  },
+  {
+    "sender": "user",
+    "message": "what is diwali"
+  },
+  {
+    "sender": "bot",
+    "message": "Sorry, I am a cultural festival planning chatbot designed by Aviral Varshney for this domain only. Please ask about festivals or say 'plan a festival'."
+  },
+  {
+    "sender": "user",
+    "message": "plan baisakhi"
+  },
+  {
+    "sender": "bot",
+    "message": "There was an error processing your request. Please try again later."
+  },
+  {
+    "sender": "user",
+    "message": "plan diwali"
+  },
+  {
+    "sender": "bot",
+    "message": "There was an error processing your request. Please try again later."
+  },
+  {
+    "sender": "user",
+    "message": "hii"
+  },
+  {
+    "sender": "bot",
+    "message": "Sorry, I am a cultural festival planning chatbot designed by Aviral Varshney for this domain only. Please ask about festivals or say 'plan a festival'.",
+    "timestamp": "2025-04-08T17:13:54.126Z"
+  },
+  {
+    "sender": "user",
+    "message": "plan holi"
+  },
+  {
+    "sender": "bot",
+    "message": "There was an error processing your request. Please ensure the server is running and the API key is valid.",
+    "timestamp": "2025-04-08T17:14:02.089Z"
+  },
+  {
+    "sender": "user",
+    "message": "hello"
+  },
+  {
+    "sender": "bot",
+    "message": "Sorry, I am a cultural festival planning chatbot designed by Aviral Varshney for this domain only. Please ask about festivals or say 'plan a festival'.",
+    "timestamp": "2025-04-08T17:16:22.903Z"
+  },
+  {
+    "sender": "user",
+    "message": "plan baisakhi"
+  },
+  {
+    "sender": "bot",
+    "message": "There was an error processing your request. Please ensure the server is running and the API key is valid.",
+    "timestamp": "2025-04-08T17:16:30.931Z"
+  },
+  {
+    "sender": "user",
+    "message": "plan holi"
+  },
+  {
+    "sender": "bot",
+    "message": "There was an error processing your request. Please ensure the server is running and the API key is valid.",
+    "timestamp": "2025-04-08T17:17:28.626Z"
+  }
+]
