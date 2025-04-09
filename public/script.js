@@ -1057,7 +1057,7 @@ function getChatbotResponse(message) {
                     currentFestivalPlan.date = parsedDate;
                     const daysRemaining = calculateDaysRemaining(parsedDate);
                     if (daysRemaining <= 0) {
-                        currentQuestionIndex = 0; // Reset to start anew
+                        currentQuestionIndex = -1; // Set to an invalid index to exit planning
                         return "Sorry, the date has passed. Would you like to plan a different festival or exit? Say 'yes' to plan another or 'no' to exit.";
                     }
                 }
